@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    table{
+      border: 1px solid black;
+    }
+    td{
+      padding: 4px;
+      font: bolder;
+      font-size: large;
+    }
+  </style>
+</head>
+<body>
+  
+    
+    <table width="100%">
+      <tr>
+        <th style="text-align: left;background-color: aquamarine; height:50px;">File_name</th>
+        <th style="text-align: left;background-color: aquamarine; height:50px;">RAH_timestamp</th>
+        <th style="text-align: left;background-color: aquamarine;height:50px;">RAH_value</th>
+        <th style="text-align: left;background-color: aquamarine;height:50px;">RAT_timestamp</th>
+        <th style="text-align: left;background-color: aquamarine;height:50px;">RAT_value</th>
+        <th style="text-align: left;background-color: aquamarine;height:50px;">SAT_timestamp</th>
+        <th style="text-align: left;background-color: aquamarine;height:50px;">SAT_value</th>
+      </tr>
+      <% if (userData.length !== 0) { %>
+        <% userData.forEach(function(data, index) { %>
+          <tr>
+            <td style="color: rgb(83,7,245);height:30px;"><%= data.File_name %></td>
+            <td style="color: rgb(83,7,245);height:30px;"><%= data.RAH_timestamp %></td>
+            <td style="color: rgb(83,7,245);height:30px;"><%= data.RAH_value %></td>
+            <td style="color: rgb(83,7,245);height:30px;"><%= data.RAT_timestamp %></td>
+            <td style="color: rgb(83,7,245);height:30px;"><%= data.RAT_value %></td>
+            <td style="color: rgb(83,7,245);height:30px;"><%= data.SAT_timestamp %></td>
+            <td style="color: rgb(83,7,245);height:30px;"><%= data.SAT_value %></td>
+
+          </tr>
+        <% }); %>
+      <% } else { %>
+        <tr>
+          <td colspan="7">No Data Found</td>
+        </tr>
+      <% } %>
+    </table>
+  
+</body>
+</html>
